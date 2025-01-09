@@ -1,0 +1,661 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbarSite {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    color: rgb(174, 49, 128);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    font-weight: 600;
+    height: 25vh; /* Altura relativa ao viewport*/ 
+}
+
+.navbarSite .menu a {
+    text-decoration: none;
+    color: #4b0082;
+    padding: 0 1.5rem; 
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbarSite .menu a:hover {
+    color: #dda0dd;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon img {
+    width: 2rem; /* Tamanho relativo */
+    height: 2rem;
+    transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Parallax Section */
+.parallax {
+    background: url('../assets/paralax.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.parallax .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.parallax .btn {
+    background: #4b0082;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+}
+
+.parallax .btn:hover {
+    background:rgb(128, 28, 128);
+}
+
+.overlay p {
+    margin-top: -1rem; /* Ajuste relativo */
+}
+
+/* Seção Entrada */
+#Entrada {
+    background: #fff; /* Fundo branco */
+    padding: 4%  0%; /* Margens relativas */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; /* Flexibilidade em telas menores */
+}
+
+.descricao {
+    display: flex;
+    justify-content: flex-end; /* Move o texto para o lado direito */
+    align-items: center; /* Centraliza verticalmente */
+    margin-inline:auto;
+    text-align: right;
+    max-width: 85%;
+}
+
+.descricao p {
+    flex: 1 1 auto;
+    text-align: justify;
+}
+
+.descricao h2 {
+    font-size: 2rem;
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Serviços */
+
+.container-sobre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 100%;
+    margin: 0 0;
+}
+
+.texto-impactante h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.texto-impactante h2 span {
+    color: #6c2ea8; /* Roxo */
+}
+
+.texto-impactante p {
+    font-size: 1rem; /* Ajuste do tamanho do texto */
+    margin-top: 1rem;
+    max-width: 600px;
+    line-height: 1.53;
+    color: #000;
+}
+
+.servico-item {
+    margin-top: -60px; /* Ajuste para subir apenas os numeros */
+    min-height: 150px; /* Define uma altura mínima para o item */
+}
+  
+.servico-item p {
+    line-height: 1.4; /* Ajuste o espaçamento entre linhas */
+    text-align: center; /* Centraliza o texto */
+    white-space: pre-line; /* Mantém quebras de linha do HTML (<br>) */
+    overflow-wrap: normal; /* Impede que palavras sejam divididas */
+    word-wrap: normal; /* Impede que palavras sejam divididas */
+    
+}
+
+.servico-item h3 {
+    margin-bottom: 1rem; /* Ajusta o espaço entre o número e o texto */
+    text-align: center; /* Centraliza o número */
+    line-height: 1; /* Garante que o número e o "+" fiquem próximos */
+    display: inline-flex; /* Garante que o número e o "+" fiquem na mesma linha */
+    align-items: baseline; /* Alinha o "+" na base do número */
+}
+
+.numeros {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 5rem;
+    font-weight: normal !important;
+}
+
+.numero {
+    text-align: center;
+    width:100%;
+}
+
+.numero h3 {
+    font-size: 3.5rem;
+    color: #4b0082;
+    font-weight: bold;
+}
+
+.numero p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #000;
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+
+
+
+
+
+
+.sobre {
+    padding: 5rem 0%; /* Espaçamento interno e ajuste para responsividade */
+}
+
+.conteudo-sobre {
+    display: flex;
+    align-items: flex-start; /* Alinha o texto e a imagem pelo topo */
+    gap: 4rem; /* Espaço entre imagem e texto */
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}
+
+.sobre-imagem {
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta o conteúdo da imagem */
+}
+
+.texto-sobre {
+    flex: 1; /* O texto ocupa o restante do espaço */
+    text-align: justify; /* Justifica o texto */
+    font-size: 1rem; /* Tamanho do texto */
+    line-height: 1; /* Espaçamento entre linhas */
+    color: #333; /* Cor do texto */ 
+    margin-left: -1%;
+}
+
+.texto-sobre h2 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 0.1rem;
+    margin-top: 1.5rem;
+}
+
+.texto-sobre p {
+    margin-bottom: 2rem; /* Espaço entre os parágrafos */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .conteudo-sobre {
+        flex-wrap: wrap; /* Permite que os itens fiquem empilhados em telas menores */
+        justify-content: center; /* Centraliza os itens */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .sobre-imagem {
+        flex: 0 0 100%; /* A imagem ocupa toda a largura disponível */
+        max-width: 100%; /* Garante que a imagem se ajuste à largura */
+        margin-bottom: 1rem; /* Espaço abaixo da imagem */
+    }
+
+    .texto-sobre {
+        flex: 0 0 100%; /* O texto ocupa toda a largura em telas menores */
+        text-align: justify; /* Justifica o texto */
+    }
+}
+
+
+
+
+
+/* Seção Equipe */
+.equipe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%; /* texto p baixo*/
+    padding: 2% 5%; /* texto p cima*/
+    background-color: #fff; /* Fundo branco */
+    margin-top: 45rem; /* Espaço acima da seção  pro texto e imaem ficar abaixo do sobre*/
+    clear: both; /* Garante que a seção fique abaixo de qualquer conteúdo anterior */
+}
+
+.conteudo-equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+    width: 100%;
+    margin-top: -75.9%;
+}
+
+/* Imagem da equipe */
+.equipe-imagem {
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta o conteúdo da imagem */
+    margin-left: 47.9%;
+}
+
+/* Texto da equipe */
+.texto-equipe {
+    flex: 1 1 50%; /* Ocupa 50% do espaço */
+    max-width: 100%;
+    color: #000;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: -90%;
+    margin-left: -3.5%;
+}
+
+.texto-equipe h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000; /* preto para o título */
+    margin-bottom: 1rem;
+}
+
+.texto-equipe p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .conteudo-equipe {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .equipe-imagem, .texto-equipe {
+        max-width: 100%;
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .texto-equipe h2 {
+        font-size: 1.6rem;
+    }
+
+    .texto-equipe p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipe {
+        padding: 5%;
+    }
+
+    .texto-equipe h2 {
+        font-size: 1.4rem;
+    }
+
+    .texto-equipe p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .equipe {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .texto-equipe h2 {
+        font-size: 1.2rem;
+    }
+
+    .texto-equipe p {
+        font-size: 0.8rem;
+    }
+
+    .equipe-imagem {
+        max-width: 90%;
+    }
+}
+
+
+
+/* Seção Principal */
+.pqainfinnity {
+    padding: 5rem 0%; /* Espaçamento interno e ajuste para responsividade */
+
+}
+
+/* Conteúdo da Seção */
+.conteudo-pqainfinnity {
+    display: flex;
+    align-items: flex-start; /* Alinha o texto e a imagem pelo topo */
+    gap: 4rem; /* Espaço entre imagem e texto */
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}  
+
+/* Estilo da Imagem */
+.pqainfinnity-imagem  {
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta o conteúdo da imagem */
+    width: 100%; /* Apenas o tamanho da imagem usa px */
+}
+
+/* Estilo do Texto */
+.texto-pqainfinnity {
+    flex-grow: 1; /* O texto ocupa o restante do espaço */
+    text-align: justify; /* Justifica o texto */
+    font-size: 1rem; /* Tamanho do texto */
+    line-height: 2; /* Espaçamento entre linhas */
+    color: #333; /* Cor do texto */ 
+    margin-top: -40%;
+    margin-left: 52%
+}
+
+.texto-pqainfinnity h2 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 0.1rem;
+    margin-top: -1rem;
+}
+
+.texto-pqainfinnity p {
+    margin-bottom: 0.1rem; /* Espaço entre os parágrafos */
+}
+
+/* Responsividade para Telas Médias */
+@media (max-width: 1024px) {
+    .conteudo-pqainfinnity {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+
+    .pqainfinnity-imagem img {
+        width: 100%; /* Ajusta a largura da imagem ao container */
+        max-width: 400px; /* Limita o tamanho da imagem em telas menores */
+        margin-bottom: 1rem; /* Espaço abaixo da imagem */
+    }
+
+    .texto-pqainfinnity {
+        flex: 0 0 100%; /* O texto ocupa toda a largura em telas menores */
+        text-align: justify; /* Justifica o texto */
+        max-width: 100%; /* Ocupa toda a largura */
+    }
+}
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 768px) {
+    .pqainfinnity-imagem img {
+        max-width: 300px; /* Reduz ainda mais a largura da imagem */
+    }
+
+    .texto-pqainfinnity h2 {
+        font-size: 1.8rem;
+    }
+
+    .texto-pqainfinnity p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade para Telas Muito Pequenas */
+@media (max-width: 480px) {
+    .conteudo-pqainfinnity {
+        padding: 5%;
+    }
+
+    .pqainfinnity-imagem img {
+        max-width: 250px; /* Tamanho mínimo para telas menores */
+    }
+
+    .texto-pqainfinnity h2 {
+        font-size: 1.4rem;
+    }
+
+    .texto-pqainfinnity p {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Section Styles */
+.section {
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+}
+
+.section img {
+    max-width: 100%;
+    margin-top: 2rem;
+    border-radius: 10%;
+}
+
+/* Form Inputs */
+input[type="date"], 
+input[type="time"], 
+select {
+    font-family: 'Open sans', sans-serif; /* Mesma fonte das outras caixas */
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #625b5b; /* Cor do texto */
+    padding: 0.8rem; /* Espaçamento interno para uniformidade */
+    border: 1% solid #ccc; /* Mesma borda */
+    border-radius: 3%; /* Bordas arredondadas */
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho */
+}
+
+/* Contato Section */
+.contato-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#contato h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  
+}
+  
+/* Título "Entre em Contato" */
+
+.titulo-contato {
+    text-align: center; /* Centraliza o título */
+    font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+    color: #4b0082; /* Define a cor para roxo */
+    margin-bottom: 2rem; /* Adiciona espaçamento abaixo do título */
+    margin-top: 1rem; /* Espaçamento acima */
+    font-weight: bold; /* Define a fonte como negrito */
+}
+
+.section.contato {
+    background-color: #f4f4f4; /* Cor de fundo desejada */
+    padding: 1rem 4rem; /* Espaçamento interno */
+    margin-top: -0.5rem; /* Espaço acima da seção */
+}
+
+.section {
+    padding: 4rem 2rem;
+    background: none; /* Remove o fundo padrão */
+}
+
+.formulario,
+.informacoes {
+    flex: 1;
+    min-width: 300px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form select, form button {
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background: #4b0082;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background: #dda0dd;
+}
+
+/* Informações de Contato */
+.informacoes {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em uma coluna */
+    gap: 1.5rem; /* Espaçamento entre os itens */
+    padding: 2.2rem 1rem; /* Espaçamento interno */
+    background-color: #f5f5f5; /* Cor de fundo */
+    border-radius: 0px; /* Bordas arredondadas */
+    max-width: 900px; /* Largura máxima */
+    margin-left: 10rem; /* Move toda a seção para a direita */
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Alinha os ícones e textos verticalmente */
+    gap: 1rem; /* Espaçamento entre ícone e texto */
+}
+
+.info-item .icon {
+    width: 70px; /* Largura do ícone */
+    height: 70px; /* Altura do ícone */
+}
+
+.info-item p {
+    margin: 0; /* Remove margens extras */
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+    margin-top: 35px; /* Move o texto um pouco para baixo */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    color: #333; /* Cor do texto */
+}
+
+/* Map Container */
+.map-container {
+    position: relative; /* Permite mover o mapa sem afetar o layout geral */
+    margin-top: 1.6rem; /* Espaçamento abaixo do mapa */
+    margin-bottom: 2rem; /* Espaçamento acima do mapa */
+    margin-left: -10rem; /* Espaçamento à esquerda */
+    margin-right: -02rem; /* Espaçamento à direita */
+    border-radius: 0px; /* Bordas arredondadas no mapa */
+    overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #4b0082;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .numeros {
+        flex-direction: column;
+        align-items: center;
+    }   
+}
+
+/* Responsividade */
+.logo img {
+    max-width: 200px; /* Define um limite máximo de largura */
+    height: 200px; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaçamento indesejado */
+    margin: 0 auto; /* Centraliza a logo horizontalmente */
+    width: 250%;
+}
+
+/* Horários e datas desativados */
+option.disabled, input.disabled {
+    color: #ccc; /* Texto em cinza claro */
+    pointer-events: none; /* Impede a seleção */
+    background-color: #f9f9f9; /* Fundo mais claro */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 100px; /* Reduz o tamanho em telas menores */
+    }
+}
+.contador {
+    display: inline-block;
+    min-width: 50px; /* Espaço fixo para números */
+    text-align: center;
+}
