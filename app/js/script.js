@@ -102,7 +102,146 @@ document.getElementById("data").addEventListener("change", function () {
     }
 });
 
-// 4. Formulário: Resetar e exibir mensagem de sucesso
+
+
+
+// 4.serviços
+const carousel = document.getElementById("carousel");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let scrollPosition = 0; // Posição inicial do carrossel
+const itemWidth = carousel.offsetWidth / 3; // Largura de um item (ajustar conforme a quantidade visível)
+
+// Duplicar os itens para criar o loop infinito
+const cloneItems = () => {
+  const items = [...carousel.children];
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    carousel.appendChild(clone); // Adiciona os clones ao final
+  });
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    carousel.insertBefore(clone, carousel.firstChild); // Adiciona os clones ao início
+  });
+};
+
+// Inicializar o loop infinito
+const initializeLoop = () => {
+  cloneItems();
+  carousel.scrollLeft = carousel.scrollWidth / 2; // Posiciona na metade
+  scrollPosition = carousel.scrollLeft;
+};
+
+// Botão "Próximo"
+nextBtn.addEventListener("click", () => {
+  scrollPosition += itemWidth;
+  carousel.scrollTo({
+    left: scrollPosition,
+    behavior: "smooth",
+  });
+
+  // Ajustar a posição para criar o loop infinito
+  setTimeout(() => {
+    if (scrollPosition >= carousel.scrollWidth - carousel.offsetWidth) {
+      scrollPosition = carousel.scrollWidth / 2;
+      carousel.scrollLeft = scrollPosition;
+    }
+  }, 500); // Tempo para a rolagem suave terminar
+});
+
+// Botão "Anterior"
+prevBtn.addEventListener("click", () => {
+  scrollPosition -= itemWidth;
+  carousel.scrollTo({
+    left: scrollPosition,
+    behavior: "smooth",
+  });
+
+  // Ajustar a posição para criar o loop infinito
+  setTimeout(() => {
+    if (scrollPosition <= 0) {
+      scrollPosition = carousel.scrollWidth / 2 - carousel.offsetWidth;
+      carousel.scrollLeft = scrollPosition;
+    }
+  }, 500); // Tempo para a rolagem suave terminar
+});
+
+// Inicializar o carrossel
+initializeLoop();
+
+
+
+
+
+
+// 5.tecnologias
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carouseltecn-track');
+    const items = document.querySelectorAll('.carouseltecn-item');
+    const btnLeft = document.querySelector('.carouseltecn-btn.left');
+    const btnRight = document.querySelector('.carouseltecn-btn.right');
+  
+    const itemWidth = items[0].clientWidth; // Largura de um item
+    const totalItems = items.length; // Número total de itens
+    let currentIndex = 0; // Índice inicial do carrossel
+  
+    // Atualizar a posição do carrossel
+    const updateCarousel = () => {
+      track.style.transition = 'transform 0.5s ease-in-out';
+      track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    };
+  
+    // Clique no botão "Próximo"
+    btnRight.addEventListener('click', () => {
+      currentIndex++;
+      updateCarousel();
+  
+      // Quando atingir o último item, volte para o primeiro
+      setTimeout(() => {
+        if (currentIndex >= totalItems) {
+          track.style.transition = 'none'; // Remove a transição
+          currentIndex = 0; // Volta para o primeiro item
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+      }, 0); // Tempo igual à duração da transição
+    });
+  
+    // Clique no botão "Anterior"
+    btnLeft.addEventListener('click', () => {
+      currentIndex--;
+      updateCarousel();
+  
+      // Quando atingir o primeiro item, volte para o último
+      setTimeout(() => {
+        if (currentIndex < 0) {
+      track.style.transition = 'none'; // Remove a transição
+          currentIndex = totalItems - 1; // Vai para o último item
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+      }, 500); // Tempo igual à duração da transição
+    });
+  
+    // Responsividade: Atualiza a largura dos itens ao redimensionar a janela
+    window.addEventListener('resize', () => {
+      track.style.transition = 'none'; // Remove a transição durante o redimensionamento
+      track.style.transform = `translateX(-${currentIndex * items[0].clientWidth}px)`;
+    });
+  
+    // Inicializar o carrossel na posição inicial
+    updateCarousel();
+  });
+
+  
+
+
+
+
+
+
+
+
+// 6. Formulário: Resetar e exibir mensagem de sucesso
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault(); // Evita o comportamento padrão do envio do formulário
 

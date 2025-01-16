@@ -6,6 +6,7 @@ body {
     line-height: 1.6;
 }
 
+
 /* Navbar Styles */
 .navbarSite {
     display: flex;
@@ -32,6 +33,7 @@ body {
     color: #dda0dd;
 }
 
+
 /* Social Links */
 .social-links {
     display: flex;
@@ -47,6 +49,7 @@ body {
 .social-icon img:hover {
     transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
 }
+
 
 /* Parallax Section */
 .parallax {
@@ -84,6 +87,7 @@ body {
     margin-top: -1rem; /* Ajuste relativo */
 }
 
+
 /* Seção Entrada */
 #Entrada {
     background: #fff; /* Fundo branco */
@@ -114,6 +118,7 @@ body {
     max-width: 100%;
     margin-bottom: 1rem;
 }
+
 
 /* Serviços */
 
@@ -194,14 +199,11 @@ body {
 
 
 
-
-
-
 .sobre {
     padding: 5rem 0%; /* Espaçamento interno e ajuste para responsividade */
 }
 
-.conteudo-sobre {
+.sobre-conteudo {
     display: flex;
     align-items: flex-start; /* Alinha o texto e a imagem pelo topo */
     gap: 4rem; /* Espaço entre imagem e texto */
@@ -213,29 +215,30 @@ body {
     object-fit: cover; /* Ajusta o conteúdo da imagem */
 }
 
-.texto-sobre {
+.sobre-texto {
     flex: 1; /* O texto ocupa o restante do espaço */
     text-align: justify; /* Justifica o texto */
     font-size: 1rem; /* Tamanho do texto */
     line-height: 1; /* Espaçamento entre linhas */
     color: #333; /* Cor do texto */ 
     margin-left: -1%;
+    margin-top: -1rem;
 }
 
-.texto-sobre h2 {
+.sobre-texto h2 {
     font-size: 1.8rem;
     color: #000;
     margin-bottom: 0.1rem;
     margin-top: 1.5rem;
 }
 
-.texto-sobre p {
+.sobre-texto p {
     margin-bottom: 2rem; /* Espaço entre os parágrafos */
 }
 
 /* Responsividade */
 @media (max-width: 1024px) {
-    .conteudo-sobre {
+    .sobre-conteudo {
         flex-wrap: wrap; /* Permite que os itens fiquem empilhados em telas menores */
         justify-content: center; /* Centraliza os itens */
         text-align: center; /* Centraliza o texto */
@@ -247,12 +250,11 @@ body {
         margin-bottom: 1rem; /* Espaço abaixo da imagem */
     }
 
-    .texto-sobre {
+    .sobre-texto {
         flex: 0 0 100%; /* O texto ocupa toda a largura em telas menores */
         text-align: justify; /* Justifica o texto */
     }
 }
-
 
 
 
@@ -268,14 +270,14 @@ body {
     clear: both; /* Garante que a seção fique abaixo de qualquer conteúdo anterior */
 }
 
-.conteudo-equipe {
+.equipe-conteudo {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 6rem;
     width: 100%;
-    margin-top: -75.9%;
+    margin-top: -76%;
 }
 
 /* Imagem da equipe */
@@ -286,25 +288,25 @@ body {
 }
 
 /* Texto da equipe */
-.texto-equipe {
+.equipe-texto {
     flex: 1 1 50%; /* Ocupa 50% do espaço */
     max-width: 100%;
     color: #000;
     font-size: 1.1rem;
     line-height: 1.6;
     text-align: justify;
-    margin-top: -90%;
+    margin-top: -83%;
     margin-left: -3.5%;
 }
 
-.texto-equipe h2 {
+.equipe-texto h2 {
     font-size: 1.8rem;
     font-weight: bold;
     color: #000; /* preto para o título */
     margin-bottom: 1rem;
 }
 
-.texto-equipe p {
+.equipe-texto p {
     font-size: 1rem;
     line-height: 1.6;
     color: #000;
@@ -313,7 +315,7 @@ body {
 
 /* Responsividade */
 @media (max-width: 1024px) {
-    .conteudo-equipe {
+    .equipe-conteudo {
         flex-direction: column;
         align-items: center;
     }
@@ -324,11 +326,11 @@ body {
         text-align: center;
     }
 
-    .texto-equipe h2 {
+    .equipe-texto h2 {
         font-size: 1.6rem;
     }
 
-    .texto-equipe p {
+    .equipe-texto p {
         font-size: 1rem;
     }
 }
@@ -338,11 +340,11 @@ body {
         padding: 5%;
     }
 
-    .texto-equipe h2 {
+    .equipe-texto h2 {
         font-size: 1.4rem;
     }
 
-    .texto-equipe p {
+    .equipe-texto p {
         font-size: 0.9rem;
     }
 }
@@ -353,11 +355,11 @@ body {
         gap: 2rem;
     }
 
-    .texto-equipe h2 {
+    .equipe-texto h2 {
         font-size: 1.2rem;
     }
 
-    .texto-equipe p {
+    .equipe-texto p {
         font-size: 0.8rem;
     }
 
@@ -365,6 +367,205 @@ body {
         max-width: 90%;
     }
 }
+
+
+
+
+
+
+/* styles.css */
+.serviços {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+    margin-top: -28%;
+  }
+  
+  .serviços-texto {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .serviços-conteudo {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que os itens não quebrem linha */
+    overflow: hidden; /* Esconde itens fora do carrossel */
+    width: 100%;
+    scroll-behavior: smooth; /* Habilita rolagem suave */
+    transition: transform 0.5s ease-in-out; /* Suaviza o movimento */
+  }
+  
+  .carouselscr-item {
+    flex: 0 0 33.33%; /* Mostra 3 itens por vez */
+    box-sizing: border-box;
+    padding: 0.1rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 0 10px;
+  }
+  
+  .carouselscr-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .carouselscr-item h3 {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  
+  .carouselscr-item p {
+    font-size: 0.8rem;
+    color: #000;
+    text-align: justify;
+    line-height: 1.5; /* Melhora o espaçamento entre linhas */
+  }
+  
+  .carouselscr-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -20%; /* Ajusta a posição para ficar ao lado do conteúdo */
+  }
+  
+  .carouselscr-controls button {
+    transform: translateY(-50%);
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+
+  }
+
+  #prevBtn {
+    left: 10px; /* Posiciona fora do carrossel, ajustado à esquerda */
+}
+
+/* Botão próximo (direita) */
+#nextBtn {
+    right: 10px; /* Posiciona fora do carrossel, ajustado à direita */
+}
+
+
+  .carouselscr-controls button:hover {
+    background-color: #888;
+  }
+  
+/* Responsividade */
+@media (max-width: 768px) {
+    .carouselscr-item {
+        flex: 0 0 50%; /* Mostra 2 itens por vez em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselscr-item {
+        flex: 0 0 100%; /* Mostra 1 item por vez em telas pequenas */
+    }
+}
+
+
+
+
+
+
+.tecnologias {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: -1.5rem;
+}
+
+.tecnologias-texto {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: rem;
+    margin-top: 15%;
+
+}
+
+.tecnologias-conteudo {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+.carouseltecn-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouseltecn-item {
+    flex: 0 0 20%; /* 5 itens visíveis (100% dividido por 5) */
+    text-align: center;
+}
+
+.carouseltecn-item img {
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.carouseltecn-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carouseltecn-btn.left {
+    left: 1px; /* Move mais para a esquerda */
+}
+
+.carouseltecn-btn.right {
+    right: 1px; /* Move mais para a direita */
+}
+
+.carouseltecn-btn:hover {
+    background-color: #888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carouseltecn-item {
+        flex: 0 0 33.333%; /* Mostra 3 itens em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .carouseltecn-item {
+        flex: 0 0 50%; /* Mostra 2 itens em telas muito pequenas */
+    }
+}
+
 
 
 
@@ -377,9 +578,10 @@ body {
 /* Conteúdo da Seção */
 .conteudo-pqainfinnity {
     display: flex;
-    align-items: flex-start; /* Alinha o texto e a imagem pelo topo */
+    align-items: stretch; /* Garante que as alturas sejam iguais */
     gap: 4rem; /* Espaço entre imagem e texto */
     flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    margin-bottom: -8rem ;
 }  
 
 /* Estilo da Imagem */
@@ -391,24 +593,26 @@ body {
 
 /* Estilo do Texto */
 .texto-pqainfinnity {
-    flex-grow: 1; /* O texto ocupa o restante do espaço */
+    display: flex;
+    flex-direction: column; /* Permite que o conteúdo do texto se alinhe verticalmente */
+    flex: 1; /* O texto ocupa o restante do espaço */
     text-align: justify; /* Justifica o texto */
     font-size: 1rem; /* Tamanho do texto */
     line-height: 2; /* Espaçamento entre linhas */
     color: #333; /* Cor do texto */ 
-    margin-top: -40%;
-    margin-left: 52%
+    margin-top: -42%;
+    margin-left: 52%;
+    overflow: hidden;
 }
 
 .texto-pqainfinnity h2 {
     font-size: 1.8rem;
     color: #000;
-    margin-bottom: 0.1rem;
-    margin-top: -1rem;
 }
 
 .texto-pqainfinnity p {
-    margin-bottom: 0.1rem; /* Espaço entre os parágrafos */
+    font-size: 1rem;
+    margin-top: -0.5rem;
 }
 
 /* Responsividade para Telas Médias */
@@ -466,6 +670,8 @@ body {
 }
 
 
+
+
 /* Section Styles */
 .section {
     padding: 4rem 2rem;
@@ -491,6 +697,7 @@ select {
     box-sizing: border-box; /* Garante que o padding não afete o tamanho */
 }
 
+
 /* Contato Section */
 .contato-wrapper {
     display: flex;
@@ -506,6 +713,7 @@ select {
     margin-bottom: 1rem;
   
 }
+
   
 /* Título "Entre em Contato" */
 
@@ -562,6 +770,7 @@ form button:hover {
     background: #dda0dd;
 }
 
+
 /* Informações de Contato */
 .informacoes {
     display: flex;
@@ -593,6 +802,7 @@ form button:hover {
     color: #333; /* Cor do texto */
 }
 
+
 /* Map Container */
 .map-container {
     position: relative; /* Permite mover o mapa sem afetar o layout geral */
@@ -604,6 +814,7 @@ form button:hover {
     overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
 }
+
 
 /* Footer */
 footer {
@@ -630,12 +841,14 @@ footer {
     width: 250%;
 }
 
+
 /* Horários e datas desativados */
 option.disabled, input.disabled {
     color: #ccc; /* Texto em cinza claro */
     pointer-events: none; /* Impede a seleção */
     background-color: #f9f9f9; /* Fundo mais claro */
 }
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -657,5 +870,4 @@ option.disabled, input.disabled {
 .contador {
     display: inline-block;
     min-width: 50px; /* Espaço fixo para números */
-    text-align: center;
-}
+    text-a
