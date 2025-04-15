@@ -1,2 +1,2 @@
 # infinnityx
-site da minha empresa
+site empresa
